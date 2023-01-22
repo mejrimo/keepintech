@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keep in Tech</title>
+    <!-- FAVICON -->
+    <link rel="icon" href="./src/assets/img/favicon.ico" type="image/x-icon" />
+  </head>
+  <body class="m-0 p-0">
+    <!-- PAGE CONTAINER -->
+    <div class="container-fluid m-0 p-0">
+      <!-- NAVBAR -->
+      <div class="sticky-top">
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+          <div class="container-fluid" id="navbarDiv">
+            <a class="navbar-brand text-success" href="#latest">
+              <img
+                src="./src/assets/img/logo.png"
+                alt="KiT Logo"
+                width="32"
+                height="32"
+                class="d-inline-block align-text-top me-1" />
+              K i T
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    aria-current="page"
+                    href="#latest"
+                    id="latest"
+                    >Latest News</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#best" id="best">Best News</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#job" id="job">Job</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#ask" id="ask">Ask</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#show" id="show">Show</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!-- NEWS -->
+      <div class="container-fluid">
+        <div class="row">
+          <div
+            class="d-flex justify-content-center align-items-center p-2"
+            id="newsType"></div>
+        </div>
+        <div class="row">
+          <div
+            class="d-block justify-content-center align-items-center p-2"
+            id="newsDetails"
+            >Loading...</div
+          >
+        </div>
+      </div>
+      <!-- LOAD MORE BUTTON -->
+      <div class="d-flex justify-content-center align-items-center mt-3">
+        <button class="btn btn-success p-2" id="loadMoreBtn"
+          >Load More News</button
+        >
+      </div>
+      <!-- FOOTER -->
+      <div class="container-fluid mt-5 mx-0 p-0">
+        <nav class="navbar navbar-dark bg-dark m-0 p-1">
+          <div
+            class="container-fluid d-flex justify-content-center align-items-center m-0 p-0">
+            <h6 class="text-light fs-6 m-0">Mohamed Mejri</h6>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </body>
+</html>
