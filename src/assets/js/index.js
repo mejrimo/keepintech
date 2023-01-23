@@ -6,30 +6,6 @@ import '../scss/styles.scss';
 import get from 'lodash.get';
 // IMPORT AXIOS
 import axios from 'axios';
-// NETLIFY LAMBDA
-async function callLambdaFunction() {
-  await axios
-    .get('../../../netlify/functions/lambda')
-    .then()
-    .catch((err) => {
-      console.log(err);
-    });
-  // const response = await fetch('../../../netlify/functions/lambda');
-  // const data = await response.json();
-}
-
-// DOM ELEMENTS
-// const navbarDiv = document.querySelector('#navbarDiv');
-const latestBtn = document.querySelector('#latest');
-const bestBtn = document.querySelector('#best');
-const jobBtn = document.querySelector('#job');
-const askBtn = document.querySelector('#ask');
-const showBtn = document.querySelector('#show');
-
-const newsType = document.querySelector('#newsType');
-const newsDetails = document.querySelector('#newsDetails');
-
-const loadMoreBtn = document.querySelector('#loadMoreBtn');
 
 // APIs
 const LATEST_NEWS = process.env.API_LATEST;
@@ -39,16 +15,75 @@ const ASK_NEWS = process.env.API_ASK;
 const SHOW_NEWS = process.env.API_SHOW;
 const ITEM_NEWS = process.env.API_ITEM;
 
-// VARIABLES DECLARATION
+// LINK TO DOM ELEMENTS
+const latestBtn = document.querySelector('#latest');
+const bestBtn = document.querySelector('#best');
+const jobBtn = document.querySelector('#job');
+const askBtn = document.querySelector('#ask');
+const showBtn = document.querySelector('#show');
+const loadMoreBtn = document.querySelector('#loadMoreBtn');
+
+const newsType = document.querySelector('#newsType');
+const newsDetails = document.querySelector('#newsDetails');
+
+// VARIABLES
 let newsDataArr = [];
 let startIndex = 0;
 let endIndex = 10;
 
-// DEFAULT
-window.onload = function () {
+// EVENT LISTENER
+latestBtn.addEventListener('click', () => {
   newsType.innerHTML = '<h3>Latest News</h3>';
   getNews(LATEST_NEWS);
-};
+});
+bestBtn.addEventListener('click', () => {
+  newsType.innerHTML = '<h3>Best News</h3>';
+  getNews(BEST_NEWS);
+});
+jobBtn.addEventListener('click', () => {
+  newsType.innerHTML = '<h3>Job Section</h3>';
+  getNews(JOB_NEWS);
+});
+askBtn.addEventListener('click', () => {
+  newsType.innerHTML = '<h3>Ask Section</h3>';
+  getNews(ASK_NEWS);
+});
+showBtn.addEventListener('click', () => {
+  newsType.innerHTML = '<h3>Show Section</h3>';
+  getNews(SHOW_NEWS);
+});
+loadMoreBtn.addEventListener('click', () => {
+  loadMoreNews();
+});
+
+// DOM ELEMENT CREATOR
+function cardCreator(tag, classes, text, links, v1, v2) {
+  let element = document.createElement(tag);
+  element.className = classes;
+  element.innerHTML = text;
+  element.href = links;
+  element.setAttribute(v1, v2);
+
+  return element;
+}
+
+// DATE CONVERTER
+function dateConversion(unixTime) {
+  let milliseconds = unixTime * 1000;
+  let dateObject = new Date(milliseconds);
+  const options = {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: false,
+  };
+  let date = dateObject.toLocaleString('en-US', options).split(',').join(' ');
+
+  return date;
+}
 
 // FUNCTION TO FETCH THE APIs
 function getNews(API) {
@@ -194,56 +229,8 @@ function loadMoreNews() {
   }
 }
 
-// DATE CONVERTER
-function dateConversion(unixTime) {
-  let milliseconds = unixTime * 1000;
-  let dateObject = new Date(milliseconds);
-  const options = {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'short',
-    year: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-    hour12: false,
-  };
-  let date = dateObject.toLocaleString('en-US', options).split(',').join(' ');
-
-  return date;
-}
-
-// DOM ELEMENT CREATOR
-function cardCreator(tag, classes, text, links, v1, v2) {
-  let element = document.createElement(tag);
-  element.className = classes;
-  element.innerHTML = text;
-  element.href = links;
-  element.setAttribute(v1, v2);
-
-  return element;
-}
-
-//EVENT LISTENER
-latestBtn.addEventListener('click', () => {
+// DEFAULT
+window.onload = () => {
   newsType.innerHTML = '<h3>Latest News</h3>';
   getNews(LATEST_NEWS);
-});
-bestBtn.addEventListener('click', () => {
-  newsType.innerHTML = '<h3>Best News</h3>';
-  getNews(BEST_NEWS);
-});
-jobBtn.addEventListener('click', () => {
-  newsType.innerHTML = '<h3>Job Section</h3>';
-  getNews(JOB_NEWS);
-});
-askBtn.addEventListener('click', () => {
-  newsType.innerHTML = '<h3>Ask Section</h3>';
-  getNews(ASK_NEWS);
-});
-showBtn.addEventListener('click', () => {
-  newsType.innerHTML = '<h3>Show Section</h3>';
-  getNews(SHOW_NEWS);
-});
-loadMoreBtn.addEventListener('click', () => {
-  loadMoreNews();
-});
+};
