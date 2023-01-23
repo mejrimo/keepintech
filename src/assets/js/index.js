@@ -6,6 +6,17 @@ import '../scss/styles.scss';
 import get from 'lodash.get';
 // IMPORT AXIOS
 import axios from 'axios';
+// NETLIFY LAMBDA
+async function callLambdaFunction() {
+  await axios
+    .get('../../../netlify/functions/lambda')
+    .then()
+    .catch((err) => {
+      console.log(err);
+    });
+  // const response = await fetch('../../../netlify/functions/lambda');
+  // const data = await response.json();
+}
 
 // DOM ELEMENTS
 // const navbarDiv = document.querySelector('#navbarDiv');

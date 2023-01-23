@@ -13,6 +13,7 @@ const config = {
   entry: './src/assets/js/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
+    filename: '[name].bundle.js',
     assetModuleFilename: 'img/[name]-[hash][ext]',
     clean: true,
   },
