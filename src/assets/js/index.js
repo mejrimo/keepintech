@@ -102,14 +102,14 @@ async function getNews(API) {
 }
 
 // FUNCTION TO DISPLAY THE NEWS
-function displayNews() {
+async function displayNews() {
   newsDetails.innerHTML = '';
 
   for (let i = startIndex; i < endIndex; i++) {
     let itemUrl = ITEM_NEWS + newsDataArr[i] + '.json';
     console.log('display news' + newsDataArr[i]);
 
-    axios
+    await axios
       .get(itemUrl)
       .then((res) => {
         console.log('data display news' + res);
@@ -166,7 +166,7 @@ function displayNews() {
 }
 
 // LOAD MORE NEWS FUNCTION
-function loadMoreNews() {
+async function loadMoreNews() {
   startIndex += 10;
   endIndex += 10;
 
@@ -178,7 +178,7 @@ function loadMoreNews() {
     let itemUrl = ITEM_NEWS + newsDataArr[i] + '.json';
     console.log('load more' + newsDataArr[i]);
 
-    axios
+    await axios
       .get(itemUrl)
       .then((res) => {
         console.log('data load more' + res.data);
