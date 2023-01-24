@@ -235,7 +235,7 @@ async function loadMoreNews() {
 }
 
 // DEFAULT
-window.onload = async () => {
+window.onload = () => {
   newsType.innerHTML = '<h3>Latest News</h3>';
-  await getNews(LATEST_NEWS);
+  getNews(LATEST_NEWS);
 };
