@@ -86,10 +86,10 @@ function dateConversion(unixTime) {
 }
 
 // FUNCTION TO FETCH THE APIs
-async function getNews(API) {
+function getNews(API) {
   newsDataArr = [];
 
-  await axios
+  axios
     .get(API)
     .then((res) => {
       console.log('get news' + res.data);
