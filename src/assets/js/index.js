@@ -86,32 +86,19 @@ function dateConversion(unixTime) {
 }
 
 // FUNCTION TO FETCH THE APIs
-// function getNews(API) {
-//   newsDataArr = [];
+function getNews(API) {
+  newsDataArr = [];
 
-//   axios
-//     .get(API)
-//     .then((res) => {
-//       newsDataArr = res.data;
-//       displayNews();
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// }
-
-// LAMBDA FUNCTION FOR NETLIFY
-async function callLambdaFunction() {
-  await axios
-    .get('/.netlify/functions/lambda')
+  axios
+    .get(API)
     .then((res) => {
-      console.log(res);
+      newsDataArr = res.data;
+      displayNews();
     })
     .catch((err) => {
       console.log(err);
     });
 }
-callLambdaFunction();
 
 // FUNCTION TO DISPLAY THE NEWS
 function displayNews() {
