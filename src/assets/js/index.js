@@ -86,16 +86,15 @@ function dateConversion(unixTime) {
 }
 
 // FUNCTION TO FETCH THE APIs
-function getNews(API) {
+async function getNews(API) {
   newsDataArr = [];
 
-  axios
+  await axios
     .get(API)
     .then((res) => {
       console.log(res.data);
       newsDataArr = res.data;
       displayNews();
-      return newsDataArr;
     })
     .catch((err) => {
       console.log(err);
@@ -171,7 +170,7 @@ function loadMoreNews() {
   startIndex += 10;
   endIndex += 10;
 
-  if (endIndex > 500) {
+  if (endIndex > newsDataArr.length) {
     return;
   }
 
@@ -236,7 +235,7 @@ function loadMoreNews() {
 }
 
 // DEFAULT
-window.onload = () => {
+window.onload = async () => {
   newsType.innerHTML = '<h3>Latest News</h3>';
-  getNews(LATEST_NEWS);
+  await getNews(LATEST_NEWS);
 };
