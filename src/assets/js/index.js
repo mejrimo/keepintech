@@ -112,7 +112,7 @@ function displayNews() {
     axios
       .get(itemUrl)
       .then((res) => {
-        console.log('data display news' + res.data);
+        console.log('data display news' + res);
         let item = res.data;
 
         let date = dateConversion(`${get(item, 'time')}`);
