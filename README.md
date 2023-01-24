@@ -7,11 +7,13 @@
 
 This is a news website that uses APIs from Hacker News.
 
-**You can try it here -> [keep-in-tech](https://count3r.netlify.app/)**
+**You can try it here -> [keep-in-tech]()**
+<!--Aggiungere link sito una volta riuscito il deploy -->
 
 ## Screenshots
 
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<!--Fare screenshot e gif una volta riuscito il deploy -->
 
 ## Lessons Learned
 
