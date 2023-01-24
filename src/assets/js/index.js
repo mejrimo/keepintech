@@ -92,7 +92,7 @@ async function getNews(API) {
   await axios
     .get(API)
     .then((res) => {
-      console.log(res.data);
+      console.log('get news' + res.data);
       newsDataArr = res.data;
       displayNews();
     })
@@ -107,12 +107,12 @@ function displayNews() {
 
   for (let i = startIndex; i < endIndex; i++) {
     let itemUrl = ITEM_NEWS + newsDataArr[i] + '.json';
-    console.log(newsDataArr[i]);
+    console.log('display news' + newsDataArr[i]);
 
     axios
       .get(itemUrl)
       .then((res) => {
-        console.log(res.data);
+        console.log('data display news' + res.data);
         let item = res.data;
 
         let date = dateConversion(`${get(item, 'time')}`);
@@ -176,12 +176,12 @@ function loadMoreNews() {
 
   for (let i = startIndex; i < endIndex; i++) {
     let itemUrl = ITEM_NEWS + newsDataArr[i] + '.json';
-    console.log(newsDataArr[i]);
+    console.log('load more' + newsDataArr[i]);
 
     axios
       .get(itemUrl)
       .then((res) => {
-        console.log(res.data);
+        console.log('data load more' + res.data);
         let item = res.data;
 
         let date = dateConversion(`${get(item, 'time')}`);
