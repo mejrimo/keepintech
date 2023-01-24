@@ -102,14 +102,14 @@ function getNews(API) {
 }
 
 // FUNCTION TO DISPLAY THE NEWS
-async function displayNews() {
+function displayNews() {
   newsDetails.innerHTML = '';
 
   for (let i = startIndex; i < endIndex; i++) {
     let itemUrl = ITEM_NEWS + newsDataArr[i] + '.json';
     console.log('display news' + newsDataArr[i]);
 
-    await axios
+    axios
       .get(itemUrl)
       .then((res) => {
         console.log('data display news' + res);
