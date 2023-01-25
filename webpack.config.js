@@ -24,6 +24,45 @@ const config = {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html',
+      meta: {
+        'og:title': { property: 'og:title', content: 'Keep in Tech' },
+        'og:description': {
+          property: 'og:description',
+          content:
+            'News Site focusing on computer science and entrepreneurship. Created using API from Hacker News.',
+        },
+        'og:type': { property: 'og:type', content: 'website' },
+        'og:url': {
+          property: 'og:url',
+          content: 'https://keep-in-tech.netlify.app/',
+        },
+        'og:image': {
+          property: 'og:image',
+          content: 'https://i.ibb.co/GCYQWPC/ImgMeta.png',
+        },
+        'og:image:alt': {
+          property: 'og:image:alt',
+          content: 'Keep in Tech Logo',
+        },
+        'twitter:card': {
+          name: 'twitter:card',
+          content: 'summary_large_image',
+        },
+        'twitter:title': { name: 'twitter:title', content: 'Keep in Tech' },
+        'twitter:description': {
+          name: 'twitter:description',
+          content:
+            'News Site focusing on computer science and entrepreneurship. Created using API from Hacker News.',
+        },
+        'twitter:image': {
+          name: 'twitter:image',
+          content: 'https://i.ibb.co/GCYQWPC/ImgMeta.png',
+        },
+        'twitter:image:alt': {
+          name: 'twitter:image:alt',
+          content: 'Keep in Tech Logo',
+        },
+      },
     }),
 
     // Add your plugins here
