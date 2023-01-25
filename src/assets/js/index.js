@@ -11,7 +11,6 @@ import axios from 'axios';
 const LATEST_NEWS = process.env.API_LATEST;
 const BEST_NEWS = process.env.API_BEST;
 const JOB_NEWS = process.env.API_JOB;
-const ASK_NEWS = process.env.API_ASK;
 const SHOW_NEWS = process.env.API_SHOW;
 const ITEM_NEWS = process.env.API_ITEM;
 
@@ -19,7 +18,6 @@ const ITEM_NEWS = process.env.API_ITEM;
 const latestBtn = document.querySelector('#latest');
 const bestBtn = document.querySelector('#best');
 const jobBtn = document.querySelector('#job');
-const askBtn = document.querySelector('#ask');
 const showBtn = document.querySelector('#show');
 const loadMoreBtn = document.querySelector('#loadMoreBtn');
 
@@ -49,10 +47,6 @@ bestBtn.addEventListener('click', () => {
 jobBtn.addEventListener('click', () => {
   newsType.innerHTML = '<h3>Job Section</h3>';
   getNews(JOB_NEWS);
-});
-askBtn.addEventListener('click', () => {
-  newsType.innerHTML = '<h3>Ask Section</h3>';
-  getNews(ASK_NEWS);
 });
 showBtn.addEventListener('click', () => {
   newsType.innerHTML = '<h3>Show Section</h3>';
