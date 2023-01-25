@@ -31,6 +31,12 @@ let newsDataArr = [];
 let startIndex = 0;
 let endIndex = 10;
 
+// DEFAULT
+window.onload = () => {
+  newsType.innerHTML = '<h3>Latest News</h3>';
+  getNews(LATEST_NEWS);
+};
+
 // EVENT LISTENER
 latestBtn.addEventListener('click', () => {
   newsType.innerHTML = '<h3>Latest News</h3>';
@@ -233,9 +239,3 @@ async function loadMoreNews() {
       });
   }
 }
-
-// DEFAULT
-window.onload = () => {
-  newsType.innerHTML = '<h3>Latest News</h3>';
-  getNews(LATEST_NEWS);
-};
