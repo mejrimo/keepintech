@@ -111,7 +111,6 @@ function displayNews() {
       .get(itemUrl)
       .then((res) => {
         let item = res.data;
-        console.log(item);
 
         let date = dateConversion(`${get(item, 'time')}`);
 
@@ -179,7 +178,6 @@ function loadMoreNews() {
       .get(itemUrl)
       .then((res) => {
         let item = res.data;
-        console.log(item);
 
         let date = dateConversion(`${get(item, 'time')}`);
 
