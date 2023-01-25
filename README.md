@@ -17,6 +17,8 @@ This is a news website that uses APIs from Hacker News.
 
 ![Mobile Starting page](https://user-images.githubusercontent.com/110642673/214454658-b8100fd2-41f5-45eb-8a64-e30d434356da.png)
 
+![Mobile Gif](https://user-images.githubusercontent.com/110642673/214455380-dbe73566-b8bd-479a-a6aa-b396835c0e2c.gif)
+
 ## Lessons Learned
 
 Doing this project i learned how to make a call for API and how to use them, how
@@ -41,12 +43,11 @@ save the file as .env
 ## Makin the Project
 
 First of all i started initializing the project with webpack, so once i
-installed the dependencies and set the webpac.config file i created all the
+installed the dependencies and set the webpack.config file i created all the
 content i needed in the template html file.
 
-The nest step was to make the API keys secret, so i put them in a .env file,
-which is not committed to github, and with a webpack plug-in i managed to reach
-those keys without making them public.
+The next step was to put the API keys into a .env file and with a webpack
+plug-in i managed to reach those keys.
 
 After that i created all the necessary functions in the index.js file: one to
 call the API and manage the data received, one to display the data as news as we
