@@ -7,13 +7,15 @@
 
 This is a news website that uses APIs from Hacker News.
 
-**You can try it here -> [keep-in-tech]()**
-<!--Aggiungere link sito una volta riuscito il deploy -->
+**You can try it here -> [keep-in-tech](https://keep-in-tech.netlify.app/)**
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-<!--Fare screenshot e gif una volta riuscito il deploy -->
+![Desktop Starting Page](https://user-images.githubusercontent.com/110642673/214453855-f8d30fd8-d1a8-47e5-8402-f5431c7be0c0.png)
+
+![Desktop Gif](https://user-images.githubusercontent.com/110642673/214454209-df95e3d1-c652-4f19-918b-3fcdef73aeaa.gif)
+
+![Mobile Starting page](https://user-images.githubusercontent.com/110642673/214454658-b8100fd2-41f5-45eb-8a64-e30d434356da.png)
 
 ## Lessons Learned
 
