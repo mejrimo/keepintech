@@ -6,6 +6,7 @@ import '../scss/styles.scss';
 import get from 'lodash.get';
 // IMPORT AXIOS
 import axios from 'axios';
+import { start } from '@popperjs/core';
 
 // APIs
 const LATEST_NEWS = process.env.API_LATEST;
@@ -169,8 +170,11 @@ function loadMoreNews() {
   startIndex += 10;
   endIndex += 10;
 
-  if (startIndex >= newsDataArr.length || endIndex >= newsDataArr.length) {
-    return;
+  if (startIndex >= newsDataArr.length) {
+    startIndex = newsDataArr.length - 1;
+    endIndex = newsDataArr.length;
+  } else if (endIndex > newsDataArr.length) {
+    endIndex = newsDataArr.length;
   }
 
   for (let i = startIndex; i < endIndex; i++) {
