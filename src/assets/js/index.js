@@ -177,7 +177,7 @@ function loadMoreNews() {
     endIndex = newsDataArr.length;
   } else if (startIndex > newsDataArr.length) {
     loadMoreBtn.classList.add('disabled');
-    block;
+    return;
   } else {
     for (let i = startIndex; i < endIndex; i++) {
       let itemUrl = `${ITEM_NEWS + newsDataArr[i] + '.json'}`;
