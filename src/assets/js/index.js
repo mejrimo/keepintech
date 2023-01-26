@@ -178,7 +178,8 @@ function loadMoreNews() {
     if (startIndex >= newsDataArr.length) {
       loadMoreBtn.classList.add('disabled');
       return;
-    } else if (endIndex >= newsDataArr.length) {
+    }
+    if (endIndex >= newsDataArr.length) {
       endIndex = newsDataArr.length;
     }
 
