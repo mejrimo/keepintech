@@ -67,7 +67,7 @@ const config = {
 
     // Add your plugins here
     new Dotenv({
-      systemVars: true,
+      systemvars: true,
     }),
   ],
   module: {
