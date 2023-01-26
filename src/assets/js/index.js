@@ -8,11 +8,11 @@ import get from 'lodash.get';
 import axios from 'axios';
 
 // APIs
-const LATEST_NEWS = process.env.API_LATEST;
-const BEST_NEWS = process.env.API_BEST;
-const JOB_NEWS = process.env.API_JOB;
-const SHOW_NEWS = process.env.API_SHOW;
-const ITEM_NEWS = process.env.API_ITEM;
+// const LATEST_NEWS = process.env.API_LATEST;
+// const BEST_NEWS = process.env.API_BEST;
+// const JOB_NEWS = process.env.API_JOB;
+// const SHOW_NEWS = process.env.API_SHOW;
+// const ITEM_NEWS = process.env.API_ITEM;
 
 // LINK TO DOM ELEMENTS
 const latestBtn = document.querySelector('#latest');
@@ -32,25 +32,25 @@ let endIndex = 10;
 // DEFAULT
 window.onload = () => {
   newsType.innerHTML = '<h3>Latest News</h3>';
-  getNews(LATEST_NEWS);
+  getNews(process.env.API_LATEST);
 };
 
 // EVENT LISTENER
 latestBtn.addEventListener('click', () => {
   newsType.innerHTML = '<h3>Latest News</h3>';
-  getNews(LATEST_NEWS);
+  getNews(process.env.API_LATEST);
 });
 bestBtn.addEventListener('click', () => {
   newsType.innerHTML = '<h3>Best News</h3>';
-  getNews(BEST_NEWS);
+  getNews(process.env.API_BEST);
 });
 jobBtn.addEventListener('click', () => {
   newsType.innerHTML = '<h3>Job Section</h3>';
-  getNews(JOB_NEWS);
+  getNews(process.env.API_JOB);
 });
 showBtn.addEventListener('click', () => {
   newsType.innerHTML = '<h3>Show Section</h3>';
-  getNews(SHOW_NEWS);
+  getNews(process.env.API_SHOW);
 });
 loadMoreBtn.addEventListener('click', () => {
   loadMoreNews();
@@ -105,7 +105,7 @@ function displayNews() {
   newsDetails.innerHTML = '';
 
   for (let i = startIndex; i < endIndex; i++) {
-    let itemUrl = `${ITEM_NEWS + newsDataArr[i] + '.json'}`;
+    let itemUrl = `${process.env.API_ITEM + newsDataArr[i] + '.json'}`;
 
     axios
       .get(itemUrl)
@@ -172,7 +172,7 @@ function loadMoreNews() {
   }
 
   for (let i = startIndex; i < endIndex; i++) {
-    let itemUrl = ITEM_NEWS + newsDataArr[i] + '.json';
+    let itemUrl = `${process.env.API_ITEM + newsDataArr[i] + '.json'}`;
 
     axios
       .get(itemUrl)
