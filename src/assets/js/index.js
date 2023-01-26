@@ -103,6 +103,8 @@ function getNews(API) {
 // FUNCTION TO DISPLAY THE NEWS
 function displayNews() {
   newsDetails.innerHTML = '';
+  startIndex = 0;
+  endIndex = 10;
 
   for (let i = startIndex; i < endIndex; i++) {
     let itemUrl = `${ITEM_NEWS + newsDataArr[i] + '.json'}`;
