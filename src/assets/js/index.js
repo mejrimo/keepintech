@@ -6,7 +6,6 @@ import '../scss/styles.scss';
 import get from 'lodash.get';
 // IMPORT AXIOS
 import axios from 'axios';
-import { start } from '@popperjs/core';
 
 // APIs
 const LATEST_NEWS = process.env.API_LATEST;
