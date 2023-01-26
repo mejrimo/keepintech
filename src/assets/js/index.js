@@ -167,17 +167,17 @@ function displayNews() {
 
 // LOAD MORE NEWS FUNCTION
 function loadMoreNews() {
-  startIndex += 10;
-  endIndex += 10;
-
-  if ((startIndex = newsDataArr.length)) {
+  if (startIndex > newsDataArr.length) {
+    loadMoreBtn.classList.add('disabled');
+  } else if (endIndex > newsDataArr.length) {
+    startIndex += 10;
+    endIndex = newsDataArr.length;
+  } else if ((startIndex = newsDataArr.length)) {
     startIndex = newsDataArr.length - 1;
     endIndex = newsDataArr.length;
-  } else if (endIndex > newsDataArr.length) {
-    endIndex = newsDataArr.length;
-  } else if (startIndex > newsDataArr.length) {
-    loadMoreBtn.classList.add('disabled');
-    return;
+  } else {
+    startIndex += 10;
+    endIndex += 10;
   }
 
   for (let i = startIndex; i < endIndex; i++) {
