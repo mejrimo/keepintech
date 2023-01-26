@@ -180,8 +180,6 @@ function loadMoreNews() {
       return;
     } else if (endIndex >= newsDataArr.length) {
       endIndex = newsDataArr.length;
-    } else {
-      i++;
     }
 
     axios
