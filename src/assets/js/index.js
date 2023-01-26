@@ -167,16 +167,12 @@ function displayNews() {
 
 // LOAD MORE NEWS FUNCTION
 function loadMoreNews() {
-  if (startIndex > newsDataArr.length) {
+  startIndex += 10;
+  if (startIndex >= newsDataArr.length) {
     loadMoreBtn.classList.add('disabled');
   } else if (endIndex > newsDataArr.length) {
-    startIndex += 10;
-    endIndex = newsDataArr.length;
-  } else if (startIndex == newsDataArr.length) {
-    startIndex = newsDataArr.length - 1;
     endIndex = newsDataArr.length;
   } else {
-    startIndex += 10;
     endIndex += 10;
   }
 
