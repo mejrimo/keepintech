@@ -105,7 +105,7 @@ function displayNews() {
   newsDetails.innerHTML = '';
 
   for (let i = startIndex; i < endIndex; i++) {
-    let itemUrl = ITEM_NEWS + newsDataArr[i] + '.json';
+    let itemUrl = `${ITEM_NEWS + newsDataArr[i] + '.json'}`;
 
     axios
       .get(itemUrl)
