@@ -178,62 +178,62 @@ function loadMoreNews() {
   } else if (startIndex > newsDataArr.length) {
     loadMoreBtn.classList.add('disabled');
     return;
-  } else {
-    for (let i = startIndex; i < endIndex; i++) {
-      let itemUrl = `${ITEM_NEWS + newsDataArr[i] + '.json'}`;
+  }
 
-      axios
-        .get(itemUrl)
-        .then((res) => {
-          let item = res.data;
+  for (let i = startIndex; i < endIndex; i++) {
+    let itemUrl = `${ITEM_NEWS + newsDataArr[i] + '.json'}`;
 
-          let date = dateConversion(`${get(item, 'time')}`);
+    axios
+      .get(itemUrl)
+      .then((res) => {
+        let item = res.data;
 
-          let col = cardCreator(
-            'div',
-            'card p-2 mb-2 mx-auto col-7 text-center',
-            ''
-          );
-          let card = cardCreator('div', 'p-2', '');
-          let cardBody = cardCreator('div', '', '');
-          let newsHeading = cardCreator(
-            'h5',
-            'card-title',
-            `${get(item, 'title')}`
-          );
-          let dateHeading = cardCreator(
-            'h6',
-            'text-muted',
-            `<p>Published ${date}</p>`
-          );
-          let author = cardCreator(
-            'h6',
-            'text-muted',
-            `<p>By ${get(item, 'by')}</p>`
-          );
-          let link = cardCreator(
-            'a',
-            'btn btn-dark',
-            'Read More',
-            `${get(item, 'url')}`,
-            'target',
-            '_blank'
-          );
+        let date = dateConversion(`${get(item, 'time')}`);
 
-          cardBody.appendChild(newsHeading);
-          cardBody.appendChild(dateHeading);
-          cardBody.appendChild(author);
-          cardBody.appendChild(link);
+        let col = cardCreator(
+          'div',
+          'card p-2 mb-2 mx-auto col-7 text-center',
+          ''
+        );
+        let card = cardCreator('div', 'p-2', '');
+        let cardBody = cardCreator('div', '', '');
+        let newsHeading = cardCreator(
+          'h5',
+          'card-title',
+          `${get(item, 'title')}`
+        );
+        let dateHeading = cardCreator(
+          'h6',
+          'text-muted',
+          `<p>Published ${date}</p>`
+        );
+        let author = cardCreator(
+          'h6',
+          'text-muted',
+          `<p>By ${get(item, 'by')}</p>`
+        );
+        let link = cardCreator(
+          'a',
+          'btn btn-dark',
+          'Read More',
+          `${get(item, 'url')}`,
+          'target',
+          '_blank'
+        );
 
-          card.appendChild(cardBody);
+        cardBody.appendChild(newsHeading);
+        cardBody.appendChild(dateHeading);
+        cardBody.appendChild(author);
+        cardBody.appendChild(link);
 
-          col.appendChild(card);
+        card.appendChild(cardBody);
 
-          newsDetails.appendChild(col);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
+        col.appendChild(card);
+
+        newsDetails.appendChild(col);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 }
