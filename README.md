@@ -11,13 +11,13 @@ This is a news website that uses APIs from Hacker News.
 
 ## Screenshots
 
-![Desktop Starting Page](https://user-images.githubusercontent.com/110642673/214453855-f8d30fd8-d1a8-47e5-8402-f5431c7be0c0.png)
+![Desktop Starting Page](https://user-images.githubusercontent.com/110642673/214722436-91b8cdf5-5a2d-469a-b118-a50604716da7.png)
 
-![Desktop Gif](https://user-images.githubusercontent.com/110642673/214454209-df95e3d1-c652-4f19-918b-3fcdef73aeaa.gif)
+![Desktop Gif](https://user-images.githubusercontent.com/110642673/214722838-da54d6c6-fcc2-4235-af6d-51128cbae1ae.gif)
 
-![Mobile Starting page](https://user-images.githubusercontent.com/110642673/214454658-b8100fd2-41f5-45eb-8a64-e30d434356da.png)
+![Mobile Starting page](https://user-images.githubusercontent.com/110642673/214722533-f684c585-867c-4a1f-8b88-93c8ae0f8979.png)
 
-![Mobile Gif](https://user-images.githubusercontent.com/110642673/214455380-dbe73566-b8bd-479a-a6aa-b396835c0e2c.gif)
+![Mobile Gif](https://user-images.githubusercontent.com/110642673/214722917-1cf0a951-32ff-43e4-98d4-cb3579ca3330.gif)
 
 ## Lessons Learned
 
