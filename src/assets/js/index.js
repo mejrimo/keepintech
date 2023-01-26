@@ -172,7 +172,7 @@ function loadMoreNews() {
   } else if (endIndex > newsDataArr.length) {
     startIndex += 10;
     endIndex = newsDataArr.length;
-  } else if ((startIndex = newsDataArr.length)) {
+  } else if (startIndex == newsDataArr.length) {
     startIndex = newsDataArr.length - 1;
     endIndex = newsDataArr.length;
   } else {
