@@ -106,7 +106,7 @@ function displayNews() {
 
   for (let i = startIndex; i < endIndex; i++) {
     let itemUrl = `${process.env.API_ITEM + newsDataArr[i] + '.json'}`;
-    console.log(process.env.API_ITEM, newsDataArr[i]);
+    console.log(process.env.API_ITEM);
 
     axios
       .get(itemUrl)
