@@ -169,7 +169,7 @@ function loadMoreNews() {
   startIndex += 10;
   endIndex += 10;
 
-  if (startIndex >= newsDataArr.length) {
+  if (startIndex >= newsDataArr.length || endIndex >= newsDataArr.length) {
     return;
   }
 
