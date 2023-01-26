@@ -39,18 +39,22 @@ window.onload = () => {
 // EVENT LISTENER
 latestBtn.addEventListener('click', () => {
   newsType.innerHTML = '<h3>Latest News</h3>';
+  loadMoreBtn.classList.remove('disabled');
   getNews(LATEST_NEWS);
 });
 bestBtn.addEventListener('click', () => {
   newsType.innerHTML = '<h3>Best News</h3>';
+  loadMoreBtn.classList.remove('disabled');
   getNews(BEST_NEWS);
 });
 jobBtn.addEventListener('click', () => {
   newsType.innerHTML = '<h3>Job Section</h3>';
+  loadMoreBtn.classList.remove('disabled');
   getNews(JOB_NEWS);
 });
 showBtn.addEventListener('click', () => {
   newsType.innerHTML = '<h3>Show Section</h3>';
+  loadMoreBtn.classList.remove('disabled');
   getNews(SHOW_NEWS);
 });
 loadMoreBtn.addEventListener('click', () => {
