@@ -24,6 +24,9 @@ const loadMoreBtn = document.querySelector('#loadMoreBtn');
 const newsType = document.querySelector('#newsType');
 const newsDetails = document.querySelector('#newsDetails');
 
+const loaderWrapper = document.querySelector('#loaderWrapper');
+const footer = document.querySelector('#footer');
+
 // VARIABLES
 let newsDataArr = [];
 let startIndex = 0;
@@ -38,23 +41,35 @@ window.onload = () => {
 // EVENT LISTENER
 latestBtn.addEventListener('click', () => {
   newsType.innerHTML = '<h3>Latest News</h3>';
-  loadMoreBtn.classList.remove('disabled');
+  loaderWrapper.classList.remove('loader-hidden');
+  loadMoreBtn.classList.add('d-none');
+  footer.classList.add('d-none');
   getNews(LATEST_NEWS);
+  loadMoreBtn.classList.remove('disabled');
 });
 bestBtn.addEventListener('click', () => {
   newsType.innerHTML = '<h3>Best News</h3>';
-  loadMoreBtn.classList.remove('disabled');
+  loaderWrapper.classList.remove('loader-hidden');
+  loadMoreBtn.classList.add('d-none');
+  footer.classList.add('d-none');
   getNews(BEST_NEWS);
+  loadMoreBtn.classList.remove('disabled');
 });
 jobBtn.addEventListener('click', () => {
   newsType.innerHTML = '<h3>Job Section</h3>';
-  loadMoreBtn.classList.remove('disabled');
+  loaderWrapper.classList.remove('loader-hidden');
+  loadMoreBtn.classList.add('d-none');
+  footer.classList.add('d-none');
   getNews(JOB_NEWS);
+  loadMoreBtn.classList.remove('disabled');
 });
 showBtn.addEventListener('click', () => {
   newsType.innerHTML = '<h3>Show Section</h3>';
-  loadMoreBtn.classList.remove('disabled');
+  loaderWrapper.classList.remove('loader-hidden');
+  loadMoreBtn.classList.add('d-none');
+  footer.classList.add('d-none');
   getNews(SHOW_NEWS);
+  loadMoreBtn.classList.remove('disabled');
 });
 loadMoreBtn.addEventListener('click', () => {
   loadMoreNews();
@@ -161,6 +176,11 @@ function displayNews() {
         col.appendChild(card);
 
         newsDetails.appendChild(col);
+      })
+      .then(() => {
+        loaderWrapper.classList.add('loader-hidden');
+        loadMoreBtn.classList.remove('d-none');
+        footer.classList.remove('d-none');
       })
       .catch((err) => {
         console.log(err);

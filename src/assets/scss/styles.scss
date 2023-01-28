@@ -4,4 +4,32 @@
 //CUSTOM STYLE
 html {
   scroll-behavior: smooth;
+
+  .sticky-top{
+    z-index: 99999;
+  }
+
+  #loaderWrapper{
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    transition: all .5s;
+
+    .spinner-border {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+
+  .loader-hidden{
+    opacity: 0;
+    visibility: hidden;
+  }
 }
+
+
+
